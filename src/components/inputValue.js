@@ -8,7 +8,6 @@ import { useState } from 'react';
 
 const InputValue = () => {
 
-
     const [searchValue, setValue] = useState('');
 
     // const onSubmit = (e) => {

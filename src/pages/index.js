@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo";
 import InputValue from "../components/inputValue";
 import localForage from 'localforage';
-import swRegister from "../../swRegister.js";
+
 
 
 const usersInstance = localForage.createInstance({
@@ -31,16 +31,13 @@ export const getUsers = async (searchValue) => {
 
 /// Function to add the REST URL in the browser cache
 
-export const addUsersCache = async (item) => {
-  const userPageUrl = `https://jsonplaceholder.typicode.com/users/${item.id}`;
-  const cache = await window.caches.open("userDetailsCachePageV1");
-  const response = await cache.match(userPageUrl);
-  if (!response) cache.add(new Request(userPageUrl));
+// export const addUsersCache = async (item) => {
+//   const userPageUrl = `https://jsonplaceholder.typicode.com/users/${item.id}`;
+//   const cache = await window.caches.open("userDetailsCachePageV1");
+//   const response = await cache.match(userPageUrl);
+//   if (!response) cache.add(new Request(userPageUrl));
 
-}
-
-swRegister();
-
+// }
 
 const IndexPage = () => (
   <Layout>
